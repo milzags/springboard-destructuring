@@ -50,30 +50,19 @@ let [raindrops, whiskers, ...aFewOfMyFavoriteThings] = [
     "Bright copper kettles",
     "warm woolen mittens",
     "Brown paper packages tied up with strings"
-  ]
-  
-  console.log(raindrops); // raindrops on roses
-  console.log(whiskers); // whiskers on kittens
-  console.log(aFewOfMyFavoriteThings); // ['bright copper keetles', 'warm woolen mittens', 'brown paper packages tied up with strings']
-  
+]
+
+console.log(raindrops); // raindrops on roses
+console.log(whiskers); // whiskers on kittens
+console.log(aFewOfMyFavoriteThings); // ['bright copper keetles', 'warm woolen mittens', 'brown paper packages tied up with strings']
 
 
+//array destructuring 3
+//what does the following code print? 
+let numbers = [10, 20, 30];
+[numbers[1], numbers[2]] = [numbers[2], numbers[1]]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(numbers) // [20,30] = [30,20]; --> prints the array [10,30,20]
 
 
 //assigning variables to object properties:
@@ -99,3 +88,38 @@ const obj = {
 
 // ES 2015 version
 let { numbers: { a: 1, b: 2} } = obj;
+//OR
+const { a, b } = obj.numbers;
+
+//ES5 array swap
+var arr = [1, 2];
+var temp = arr[0];
+arr[0] = arr[1];
+arr[1] = temp;
+
+//write a one line version in ES2015 format
+[arr[0], arr[1] = arr[1], arr[0]];
+
+// Write a function called raceResults which accepts a single array argument. It should return an object with the keys first, second, third, and rest.
+
+// first: the first element in the array
+// second: the second element in the array
+// third: the third element in the array
+// rest: all other elements in the array
+
+// Write a one line function to make this work using
+// An arrow function
+// Destructuring
+// ‘Enhanced’ object assignment (same key/value shortcut)
+
+function raceResults([first, second third, ...rest]) {
+    return { 
+        first, 
+        second, 
+        third,
+        rest,
+    }
+};
+
+//as an arrow function:
+const raceResults = ([first, second, third, ...rest]) => ({first, second, third, rest});
